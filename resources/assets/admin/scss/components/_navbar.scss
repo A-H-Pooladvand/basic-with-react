@@ -1,0 +1,19 @@
+.panel__navbar {
+  background: $primary;
+  color: dep-color($primary);
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0 5px 0 rgba(0,0,0, 0.6);
+
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .brand-name {
+    margin-right: 5%;
+  }
+}

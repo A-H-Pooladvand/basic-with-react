@@ -1,0 +1,115 @@
+.panel__sidebar {
+  height: 100%;
+  width: 220px;
+  display: flex;
+  flex-direction: row;
+  float: right;
+
+  .sidebar {
+    width: 220px;
+    background-color: $primary;
+    color: $white;
+    box-shadow: -1px 0px 5px 0 rgba(0, 0, 0, 0.6);
+
+    li {
+
+      a {
+        position: relative;
+
+        &:hover {
+          &:after {
+            content: '';
+            border-left: 3px solid $teal;
+            position: absolute;
+            height: 100%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+
+    > li {
+      border-bottom: 1px solid $gray-600;
+      overflow: hidden;
+
+      a {
+        padding: 0.5rem 0 0.5rem 0.5rem;
+        width: 100%;
+        display: block;
+        color: $white;
+
+        &:hover {
+          color: $teal;
+        }
+      }
+
+      .sub-menu {
+        height: 0;
+
+        li {
+
+          a {
+            padding-right: 2.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  .mainbar {
+    height: 100%;
+    width: 100%;
+  }
+
+  .menu--defaults {
+    &:before {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 600;
+      color: inherit;
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translate(0, -50%);
+      font-size: 11px;
+    }
+
+    &:hover {
+
+      &:before {
+        color: $teal;
+      }
+    }
+  }
+
+  .menu--close {
+    @extend .menu--defaults;
+
+    &:before {
+      content: "\F078";
+    }
+
+    &:hover {
+
+      &:before {
+        color: $teal;
+      }
+    }
+  }
+
+  .menu--open {
+    @extend .menu--defaults;
+
+    &:before {
+      content: "\F077";
+    }
+
+    &:hover {
+
+      &:before {
+        color: $teal;
+      }
+    }
+  }
+}
