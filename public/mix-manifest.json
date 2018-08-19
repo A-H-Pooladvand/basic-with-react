@@ -1,4 +1,8 @@
 {
-    "/assets/admin.js": "/assets/admin.js",
-    "/assets/admin.css": "/assets/admin.css"
+    "/index.js": "/index.js",
+    "/_init.css": "/_init.css",
+    "/0.22f3ddc3746b5bcf9694.hot-update.js": "/0.22f3ddc3746b5bcf9694.hot-update.js",
+    "/0.bdb30f8a89b9f3484e28.hot-update.js": "/0.bdb30f8a89b9f3484e28.hot-update.js",
+    "/0.c1937a6e604cdd10ea1e.hot-update.js": "/0.c1937a6e604cdd10ea1e.hot-update.js",
+    "/0.22143a17ab0d23ea0449.hot-update.js": "/0.22143a17ab0d23ea0449.hot-update.js"
 }

@@ -36,6 +36,7 @@ $grays: map-merge(
                 $grays
 );
 
+//#354458
 $blue: #354458;
 $indigo: #6610f2;
 $purple: #6f42c1;
@@ -162,9 +163,9 @@ $body-color: $gray-900;
 //
 // Style anchor elements.
 
-$link-color: theme-color("primary");
+$link-color: $teal;
 $link-decoration: none;
-$link-hover-color: darken($link-color, 15%);
+$link-hover-color: lighten($link-color, 10%);
 $link-hover-decoration: underline;
 
 // Paragraphs
@@ -228,7 +229,7 @@ $box-shadow: 0 .5rem 1rem rgba($black, .15);
 $box-shadow-lg: 0 1rem 3rem rgba($black, .175);
 
 $component-active-color: $white;
-$component-active-bg: theme-color("primary");
+$component-active-bg: $teal;
 
 $caret-width: .3em;
 
@@ -238,7 +239,7 @@ $transition-collapse: height .35s ease;
 
 // Fonts
 //
-// Font, line-clientHeight, and color for body text, headings, and more.
+// Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
 $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -423,7 +424,7 @@ $input-border-radius-sm: $border-radius-sm;
 
 $input-focus-bg: $input-bg;
 $input-focus-border-color: lighten($component-active-bg, 25%);
-$input-focus-color: $input-color;
+$input-focus-color: $teal;
 $input-focus-width: $input-btn-focus-width;
 $input-focus-box-shadow: $input-btn-focus-box-shadow;
 
@@ -626,7 +627,7 @@ $nav-pills-link-active-bg: $component-active-bg;
 $nav-divider-color: $gray-200;
 $nav-divider-margin-y: ($spacer / 2);
 
-// Header
+// Navbar
 
 $navbar-padding-y: ($spacer / 2);
 $navbar-padding-x: $spacer;
@@ -634,7 +635,7 @@ $navbar-padding-x: $spacer;
 $navbar-nav-link-padding-x: .5rem;
 
 $navbar-brand-font-size: $font-size-lg;
-// Compute the navbar-brand padding-y so the navbar-brand will have the same clientHeight as navbar-text and nav-link
+// Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
 $nav-link-height: ($font-size-base * $line-height-base + $nav-link-padding-y * 2);
 $navbar-brand-height: $navbar-brand-font-size * $line-height-base;
 $navbar-brand-padding-y: ($nav-link-height - $navbar-brand-height) / 2;

@@ -1,3 +1,15 @@
 {
-  "home": "/"
+  "home": {
+    "path": "/",
+    "component": "Dashboard"
+  },
+  "module": {
+    "create": {
+      "path": "/modules/create",
+      "component": "Module"
+    }
+  },
+  "admin": {
+    "path": "/admin/menus"
+  }
 }

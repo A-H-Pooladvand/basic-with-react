@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import '../../../../public/assets/admin.css';
+// import '../../../../public/_init.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Panel from "./components/Panel";
-import Routes from './routes.json';
 
 class Main extends Component {
 
@@ -11,7 +10,7 @@ class Main extends Component {
 
         return (
             <Router>
-                <Route path={Routes.home} component={Panel} />
+                <Route path={"/admin"} component={Panel} />
             </Router>
         );
     }

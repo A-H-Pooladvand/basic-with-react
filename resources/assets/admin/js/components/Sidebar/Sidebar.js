@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import SidebarListItems from '../../data/sidebar/sidebar_menu_items.json';
 import $ from "../../helpers/jquery";
+import {NavLink, Link} from 'react-router-dom';
+import axios from "axios";
+import Routes from "../../routes.json";
 
 export default class Sidebar extends Component {
 
@@ -8,28 +10,34 @@ export default class Sidebar extends Component {
         super(props);
         this.toggleRef = React.createRef();
         this.toggle = this.toggle.bind(this);
-        this.checker = true;
+        this.state = {checker: true, menu: []};
+        this.createSidebarSubMenu = this.createSidebarSubMenu.bind(this);
     }
 
-    componentDidMount() {
-        $.loop($.select('.sidebar > li > a'), (item) => {
-            item.classList.add('menu--close');
+    componentWillMount() {
+        this.getAdminMenus();
+    }
+
+    getAdminMenus() {
+        axios.get(Routes.admin.path).then((response) => {
+            this.setState({menu: response.data});
         });
     }
 
-
-    createSidebarMenu() {
-
+    renderMenu(response) {
         const listItems = [];
 
-        SidebarListItems.data.forEach((item) => {
+        response.forEach((item) => {
+
             listItems.push(
                 <li key={item.id} ref={this.toggleRef}>
-                    <a key={item.id} href="#" onClick={this.toggle}>
-                        {item.icon && <i className={`fas fa-${item.icon} list-fw`}/>}
+
+                    <NavLink key={item.id} to={item.path} onClick={this.toggle}  className='menu--close' activeClassName='menu--open'>
+                        {item.icon && <i className={`${item.icon} list-fw`}/>}
                         {item.title}
-                    </a>
-                    <ul className={item.children[0].className}>
+                    </NavLink>
+
+                    <ul className='sub-menu'>
                         {
                             item.children.map((child) => {
                                 return this.createSidebarSubMenu(child);
@@ -39,14 +47,13 @@ export default class Sidebar extends Component {
                 </li>
             );
         });
-
         return listItems;
     }
 
     createSidebarSubMenu(child) {
         return (
             <li key={child.id}>
-                <a href="#">{child.title}</a>
+                <Link to={`${child.path}`}>{child.title}</Link>
             </li>
         )
     };
@@ -56,8 +63,8 @@ export default class Sidebar extends Component {
         let elem = e.target;
         let sub = elem.parentElement.querySelectorAll('.sub-menu')[0];
 
-        if (elem.classList.contains('menu--close') && this.checker) {
-            this.checker = false;
+        if (elem.classList.contains('menu--close') && this.state.checker) {
+            this.state.checker = false;
 
             $.loop($.select('.sub-menu'), (item) => {
                 let el = item.parentElement;
@@ -73,16 +80,16 @@ export default class Sidebar extends Component {
             elem.classList.add('menu--open');
 
             $.slideDown(sub, () => {
-                this.checker = true;
+                this.state.checker = true;
             });
 
-        } else if (this.checker) {
-            this.checker = false;
+        } else if (this.state.checker) {
+            this.state.checker = false;
 
             elem.classList.remove('menu--open');
             elem.classList.add('menu--close');
             $.slideUp(sub, () => {
-                this.checker = true;
+                this.state.checker = true;
             });
         }
     }
@@ -90,7 +97,7 @@ export default class Sidebar extends Component {
     render() {
         return (
             <ul className="sidebar">
-                {this.createSidebarMenu()}
+                {this.renderMenu(this.state.menu)}
             </ul>
         );
     }

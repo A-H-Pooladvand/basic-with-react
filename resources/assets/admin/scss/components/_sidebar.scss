@@ -15,11 +15,12 @@
 
       a {
         position: relative;
+        color: $white;
 
         &:hover {
           &:after {
             content: '';
-            border-left: 3px solid $teal;
+            border-left: 3px solid $teal ;
             position: absolute;
             height: 100%;
             top: 0;
@@ -38,7 +39,6 @@
         padding: 0.5rem 0 0.5rem 0.5rem;
         width: 100%;
         display: block;
-        color: $white;
 
         &:hover {
           color: $teal;

@@ -3,7 +3,7 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2018-08-17 09:40:33.
+    * Generated on 2018-08-18 09:52:14.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
@@ -135,11 +135,11 @@ namespace PHPSTORM_META {
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
     ]));
@@ -270,11 +270,11 @@ namespace PHPSTORM_META {
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
     ]));
@@ -405,11 +405,11 @@ namespace PHPSTORM_META {
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
     ]));
@@ -540,11 +540,11 @@ namespace PHPSTORM_META {
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
     ]));
@@ -675,11 +675,11 @@ namespace PHPSTORM_META {
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
     ]));
@@ -810,11 +810,11 @@ namespace PHPSTORM_META {
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
     ]));
@@ -945,11 +945,11 @@ namespace PHPSTORM_META {
         'translation.loader' => \Illuminate\Translation\FileLoader::class,
         'translator' => \Illuminate\Translation\Translator::class,
         'validation.presence' => \Illuminate\Validation\DatabasePresenceVerifier::class,
+        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'command.ide-helper.generate' => \Barryvdh\LaravelIdeHelper\Console\GeneratorCommand::class,
         'command.ide-helper.models' => \Barryvdh\LaravelIdeHelper\Console\ModelsCommand::class,
         'command.ide-helper.meta' => \Barryvdh\LaravelIdeHelper\Console\MetaCommand::class,
         'command.ide-helper.eloquent' => \Barryvdh\LaravelIdeHelper\Console\EloquentCommand::class,
-        'command.tinker' => \Laravel\Tinker\Console\TinkerCommand::class,
         'NunoMaduro\Collision\Contracts\Adapters\Phpunit\Listener' => \NunoMaduro\Collision\Adapters\Phpunit\Listener::class,
         'NunoMaduro\Collision\Contracts\Provider' => \NunoMaduro\Collision\Provider::class,
     ]));

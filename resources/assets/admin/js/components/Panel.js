@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import Header from "./Navbar/Header";
 import Sidebar from "./Sidebar/Sidebar";
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import Routes from '../routes.json'
 import Dashboard from "./Modules/Dashboard";
+import Module from "./Modules/Module";
 
 export default class Panel extends Component {
+
     render() {
         return (
             <main className='panel__container'>
@@ -19,9 +21,10 @@ export default class Panel extends Component {
                     </aside>
 
                     <section className='panel__content'>
-                        <Router>
-                            <Route path={Routes.home} component={Dashboard} />
-                        </Router>
+                        <Switch>
+                            <Route path={`${this.props.match.url}${Routes.module.create.path}`} component={Module}/>
+                            <Route path={`${this.props.match.url}${Routes.home.path}`} component={Dashboard}/>
+                        </Switch>
                     </section>
 
                 </section>

@@ -10,6 +10,28 @@
 
 namespace App{
 /**
+ * App\Menu
+ *
+ * @property int $id
+ * @property int|null $parent_id
+ * @property string $title
+ * @property string $path
+ * @property string|null $icon
+ * @property string $permission
+ * @property string $type
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Menu whereIcon($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Menu whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Menu whereParentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Menu wherePath($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Menu wherePermission($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Menu whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Menu whereType($value)
+ */
+	class Menu extends \Eloquent {}
+}
+
+namespace App{
+/**
  * App\User
  *
  * @property int $id
