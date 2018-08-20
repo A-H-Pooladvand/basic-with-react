@@ -47,6 +47,7 @@ export default class Sidebar extends Component {
                 </li>
             );
         });
+
         return listItems;
     }
 

@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
         Cache::flush();
 //         $this->call(UsersTableSeeder::class);
          $this->call(MenuTableSeeder::class);
+         $this->call(DataTypeTableSeeder::class);
     }
 }

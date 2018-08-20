@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.6.33 on 2018-08-18 09:52:14.
+ * Generated for Laravel 5.6.33 on 2018-08-20 12:05:30.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -804,8 +804,8 @@ namespace Illuminate\Support\Facades {
          * 
          * Returns false otherwise.
          * 
-         * `has($id)` returning true does not mean that `getAdminMenus($id)` will not throw an exception.
-         * It does however mean that `getAdminMenus($id)` will not throw a `NotFoundExceptionInterface`.
+         * `has($id)` returning true does not mean that `get($id)` will not throw an exception.
+         * It does however mean that `get($id)` will not throw a `NotFoundExceptionInterface`.
          *
          * @param string $id Identifier of the entry to look for.
          * @return bool 
@@ -1452,7 +1452,7 @@ namespace Illuminate\Support\Facades {
     class Auth {
         
         /**
-         * Attempt to getAdminMenus the guard from the local cache.
+         * Attempt to get the guard from the local cache.
          *
          * @param string $name
          * @return \Illuminate\Contracts\Auth\Guard|\Illuminate\Contracts\Auth\StatefulGuard 
@@ -3703,7 +3703,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Run an SQL statement and getAdminMenus the number of rows affected.
+         * Run an SQL statement and get the number of rows affected.
          *
          * @param string $query
          * @param array $bindings
@@ -6249,7 +6249,7 @@ namespace Illuminate\Support\Facades {
     class Password {
         
         /**
-         * Attempt to getAdminMenus the broker from the local cache.
+         * Attempt to get the broker from the local cache.
          *
          * @param string|null $name
          * @return \Illuminate\Contracts\Auth\PasswordBroker 
@@ -12768,7 +12768,7 @@ namespace  {
             }
          
             /**
-             * Execute the query and getAdminMenus the first result or throw an exception.
+             * Execute the query and get the first result or throw an exception.
              *
              * @param array $columns
              * @return \Illuminate\Database\Eloquent\Model|static 
@@ -12781,7 +12781,7 @@ namespace  {
             }
          
             /**
-             * Execute the query and getAdminMenus the first result or call a callback.
+             * Execute the query and get the first result or call a callback.
              *
              * @param \Closure|array $columns
              * @param \Closure|null $callback
@@ -13113,7 +13113,7 @@ namespace  {
             }
          
             /**
-             * Execute the query and getAdminMenus the first result.
+             * Execute the query and get the first result.
              *
              * @param array $columns
              * @return \Illuminate\Database\Eloquent\Model|object|static|null 
@@ -14595,7 +14595,7 @@ namespace  {
             }
          
             /**
-             * Insert a new record and getAdminMenus the value of the primary key.
+             * Insert a new record and get the value of the primary key.
              *
              * @param array $values
              * @param string|null $sequence

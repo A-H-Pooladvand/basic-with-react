@@ -4,7 +4,7 @@ export default class Input extends Component {
     render() {
         return (
             <div className="form-group">
-                <label htmlFor={`input_${this.props.name}`}>عنوان</label>
+                <label title={this.props.caption} htmlFor={`input_${this.props.name}`}>{this.props.title}</label>
                 <input
                     name={this.props.name}
                     type={this.props.name}

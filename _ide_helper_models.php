@@ -19,6 +19,7 @@ namespace App{
  * @property string|null $icon
  * @property string $permission
  * @property string $type
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Menu[] $children
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Menu whereIcon($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Menu whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Menu whereParentId($value)
@@ -28,6 +29,28 @@ namespace App{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Menu whereType($value)
  */
 	class Menu extends \Eloquent {}
+}
+
+namespace App{
+/**
+ * App\Module
+ *
+ * @property int $id
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Module whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Module whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Module whereUpdatedAt($value)
+ */
+	class Module extends \Eloquent {}
+}
+
+namespace App{
+/**
+ * App\DataType
+ *
+ */
+	class DataType extends \Eloquent {}
 }
 
 namespace App{

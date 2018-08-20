@@ -11,5 +11,8 @@
   },
   "admin": {
     "path": "/admin/menus"
+  },
+  "dataTypes": {
+    "path": "/admin/data-types"
   }
 }
