@@ -1,14 +1,32 @@
 import React, {Component} from 'react';
+import Select from 'react-select';
 
-export default class Select extends Component {
+export default class FormSelect extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {selectedOption: props.selectedOptions};
+
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(selectedOption) {
+        console.log(selectedOption);
+        this.setState({selectedOption});
+    };
+
     render() {
         return (
-            <div className='form-group'>
-                <label htmlFor={`input_${this.props.name}`}>{this.props.title}</label>
-                <select name={this.props.name} id={`input_${this.props.name}`} className={this.props.className}>
-                    {this.props.options.map(item => <option key={item.id} value={this.props.identical ? item.title : item.value}>{item.title}</option>)}
-                </select>
-            </div>
+            <Select
+                key={this.props.uniqueKey}
+                value={this.state.selectedOption}
+                onChange={this.handleChange}
+                options={this.props.options}
+                placeholder={this.props.placeholder}
+                isSearchable={this.props.isSearchable}
+                name={this.props.name}
+            />
         );
     }
 }

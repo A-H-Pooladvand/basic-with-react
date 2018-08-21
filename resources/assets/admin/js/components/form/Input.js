@@ -12,6 +12,7 @@ export default class Input extends Component {
                     id={`input_${this.props.name}`}
                     placeholder={this.props.placeholder}
                 />
+                {/*<div className="valid-feedback">لطفا آدرس درستی مشخص نمایید</div>*/}
             </div>
         );
     }
