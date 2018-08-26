@@ -17,6 +17,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::post('/', 'DataTypeController@index')->name('index');
     });
 
+    Route::group(['prefix' => 'modules', 'as' => 'module', 'namespace' => 'Module\Admin'], function () {
+        Route::post('/', 'ModuleController@store')->name('store');
+    });
+
     Route::get('{path?}', 'Home\Admin\HomeController@show')->where('path', '.*')->name('react.home');
 
 });

@@ -6,21 +6,20 @@ export default class FormSelect extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {selectedOption: props.selectedOptions};
+        this.state = {selectedOption: props.value};
 
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(selectedOption) {
-        console.log(selectedOption);
         this.setState({selectedOption});
     };
 
     render() {
         return (
             <Select
-                key={this.props.uniqueKey}
                 value={this.state.selectedOption}
+                key={this.props.uniqueKey}
                 onChange={this.handleChange}
                 options={this.props.options}
                 placeholder={this.props.placeholder}

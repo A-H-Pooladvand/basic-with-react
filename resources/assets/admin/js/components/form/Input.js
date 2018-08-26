@@ -1,10 +1,28 @@
 import React, {Component} from 'react';
 
 export default class Input extends Component {
+
+    constructor(props) {
+        super(props);
+        this.isLabel = this.isLabel.bind(this);
+    }
+
+
+    isLabel() {
+        if (false === this.props.label) {
+            return '';
+        }
+
+        return <label title={this.props.caption} htmlFor={`input_${this.props.name}`}>{this.props.title}</label>;
+    }
+
     render() {
+
         return (
             <div className="form-group">
-                <label title={this.props.caption} htmlFor={`input_${this.props.name}`}>{this.props.title}</label>
+
+                {this.isLabel()}
+
                 <input
                     name={this.props.name}
                     type={this.props.name}

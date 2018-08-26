@@ -3551,7 +3551,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Set the query post processor to the default implementation.
+         * Set the query formPost processor to the default implementation.
          *
          * @return void 
          * @static 
@@ -4010,7 +4010,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Get the query post processor used by the connection.
+         * Get the query formPost processor used by the connection.
          *
          * @return \Illuminate\Database\Query\Processors\Processor 
          * @static 
@@ -4022,7 +4022,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Set the query post processor used by the connection.
+         * Set the query formPost processor used by the connection.
          *
          * @param \Illuminate\Database\Query\Processors\Processor $processor
          * @return void 

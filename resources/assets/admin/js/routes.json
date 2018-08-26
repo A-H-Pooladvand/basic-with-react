@@ -7,6 +7,9 @@
     "create": {
       "path": "/modules/create",
       "component": "Module"
+    },
+    "store": {
+      "path": "/admin/modules"
     }
   },
   "admin": {

@@ -11656,7 +11656,7 @@ function diffHydratedProperties$1(domElement, tag, rawProps, parentNamespace, ro
     case 'select':
     case 'option':
       // For input and textarea we current always set the value property at
-      // post mount to force it to diverge from attributes. However, for
+      // formPost mount to force it to diverge from attributes. However, for
       // option and select we don't quite do the same thing and select
       // is not resilient to the DOM state changing so we don't do that here.
       // TODO: Consider not doing this for input and textarea.
