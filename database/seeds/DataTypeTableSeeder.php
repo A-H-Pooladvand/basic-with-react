@@ -20,172 +20,228 @@ class DataTypeTableSeeder extends Seeder
     {
         return [
             [
-                'title' => 'bigIncrements'
+                'title' => 'bigIncrements',
+                'value' => 'bigIncrements'
             ],
             [
-                'title' => 'bigInteger'
+                'title' => 'bigInteger',
+                'value' => 'bigInteger'
             ],
             [
-                'title' => 'binary'
+                'title' => 'binary',
+                'value' => 'binary'
             ],
             [
-                'title' => 'boolean'
+                'title' => 'boolean',
+                'value' => 'boolean'
             ],
             [
-                'title' => 'char'
+                'title' => 'char',
+                'value' => 'char'
             ],
             [
-                'title' => 'date'
+                'title' => 'date',
+                'value' => 'date'
             ],
             [
-                'title' => 'dateTime'
+                'title' => 'dateTime',
+                'value' => 'dateTime'
             ],
             [
-                'title' => 'dateTimeTz'
+                'title' => 'dateTimeTz',
+                'value' => 'dateTimeTz'
             ],
             [
-                'title' => 'decimal'
+                'title' => 'decimal',
+                'value' => 'decimal'
             ],
             [
-                'title' => 'double'
+                'title' => 'double',
+                'value' => 'double'
             ],
             [
-                'title' => 'enum'
+                'title' => 'enum',
+                'value' => 'enum'
             ],
             [
-                'title' => 'float'
+                'title' => 'float',
+                'value' => 'float'
             ],
             [
-                'title' => 'geometry'
+                'title' => 'geometry',
+                'value' => 'geometry'
             ],
             [
-                'title' => 'geometryCollection'
+                'title' => 'geometryCollection',
+                'value' => 'geometryCollection'
             ],
             [
-                'title' => 'increments'
+                'title' => 'increments',
+                'value' => 'increments'
             ],
             [
-                'title' => 'integer'
+                'title' => 'integer',
+                'value' => 'integer'
             ],
             [
-                'title' => 'ipAddress'
+                'title' => 'ipAddress',
+                'value' => 'ipAddress'
             ],
             [
-                'title' => 'json'
+                'title' => 'json',
+                'value' => 'json'
             ],
             [
-                'title' => 'jsonb'
+                'title' => 'jsonb',
+                'value' => 'jsonb'
             ],
             [
-                'title' => 'lineString'
+                'title' => 'lineString',
+                'value' => 'lineString'
             ],
             [
-                'title' => 'longText'
+                'title' => 'longText',
+                'value' => 'longText'
             ],
             [
-                'title' => 'macAddress'
+                'title' => 'macAddress',
+                'value' => 'macAddress'
             ],
             [
-                'title' => 'mediumIncrements'
+                'title' => 'mediumIncrements',
+                'value' => 'mediumIncrements'
             ],
             [
-                'title' => 'mediumInteger'
+                'title' => 'mediumInteger',
+                'value' => 'mediumInteger'
             ],
             [
-                'title' => 'mediumText'
+                'title' => 'mediumText',
+                'value' => 'mediumText'
             ],
             [
-                'title' => 'morphs'
+                'title' => 'morphs',
+                'value' => 'morphs'
             ],
             [
-                'title' => 'multiLineString'
+                'title' => 'multiLineString',
+                'value' => 'multiLineString'
             ],
             [
-                'title' => 'multiPoint'
+                'title' => 'multiPoint',
+                'value' => 'multiPoint'
             ],
             [
-                'title' => 'multiPolygon'
+                'title' => 'multiPolygon',
+                'value' => 'multiPolygon'
             ],
             [
-                'title' => 'nullableMorphs'
+                'title' => 'nullableMorphs',
+                'value' => 'nullableMorphs'
             ],
             [
-                'title' => 'nullableTimestamps'
+                'title' => 'nullableTimestamps',
+                'value' => 'nullableTimestamps'
             ],
             [
-                'title' => 'point'
+                'title' => 'point',
+                'value' => 'point'
             ],
             [
-                'title' => 'polygon'
+                'title' => 'polygon',
+                'value' => 'polygon'
             ],
             [
-                'title' => 'rememberToken'
+                'title' => 'rememberToken',
+                'value' => 'rememberToken'
             ],
             [
-                'title' => 'smallIncrements'
+                'title' => 'smallIncrements',
+                'value' => 'smallIncrements'
             ],
             [
-                'title' => 'smallInteger'
+                'title' => 'smallInteger',
+                'value' => 'smallInteger'
             ],
             [
-                'title' => 'softDeletes'
+                'title' => 'softDeletes',
+                'value' => 'softDeletes'
             ],
             [
-                'title' => 'softDeletesTz'
+                'title' => 'softDeletesTz',
+                'value' => 'softDeletesTz'
             ],
             [
-                'title' => 'string'
+                'title' => 'string',
+                'value' => 'string'
             ],
             [
-                'title' => 'text'
+                'title' => 'text',
+                'value' => 'text'
             ],
             [
-                'title' => 'time'
+                'title' => 'time',
+                'value' => 'time'
             ],
             [
-                'title' => 'timeTz'
+                'title' => 'timeTz',
+                'value' => 'timeTz'
             ],
             [
-                'title' => 'timestamp'
+                'title' => 'timestamp',
+                'value' => 'timestamp'
             ],
             [
-                'title' => 'timestampTz'
+                'title' => 'timestampTz',
+                'value' => 'timestampTz'
             ],
             [
-                'title' => 'timestamps'
+                'title' => 'timestamps',
+                'value' => 'timestamps'
             ],
             [
-                'title' => 'timestampsTz'
+                'title' => 'timestampsTz',
+                'value' => 'timestampsTz'
             ],
             [
-                'title' => 'tinyIncrements'
+                'title' => 'tinyIncrements',
+                'value' => 'tinyIncrements'
             ],
             [
-                'title' => 'tinyInteger'
+                'title' => 'tinyInteger',
+                'value' => 'tinyInteger'
             ],
             [
-                'title' => 'unsignedBigInteger'
+                'title' => 'unsignedBigInteger',
+                'value' => 'unsignedBigInteger'
             ],
             [
-                'title' => 'unsignedDecimal'
+                'title' => 'unsignedDecimal',
+                'value' => 'unsignedDecimal'
             ],
             [
-                'title' => 'unsignedInteger'
+                'title' => 'unsignedInteger',
+                'value' => 'unsignedInteger'
             ],
             [
-                'title' => 'unsignedMediumInteger'
+                'title' => 'unsignedMediumInteger',
+                'value' => 'unsignedMediumInteger'
             ],
             [
-                'title' => 'unsignedSmallInteger'
+                'title' => 'unsignedSmallInteger',
+                'value' => 'unsignedSmallInteger'
             ],
             [
-                'title' => 'unsignedTinyInteger'
+                'title' => 'unsignedTinyInteger',
+                'value' => 'unsignedTinyInteger'
             ],
             [
-                'title' => 'uuid'
+                'title' => 'uuid',
+                'value' => 'uuid'
             ],
             [
-                'title' => 'year'
+                'title' => 'year',
+                'value' => 'year'
             ]
         ];
     }

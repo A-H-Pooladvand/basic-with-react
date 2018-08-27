@@ -16,6 +16,7 @@ class CreateDataTypesTable extends Migration
         Schema::create('data_types', function (Blueprint $table) {
             $table->tinyIncrements('id');
             $table->string('title', 40);
+            $table->string('value', 40);
         });
     }
 

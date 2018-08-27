@@ -6,7 +6,6 @@ Route::group(['namespace' => 'Home'], function () {
 
 Route::get('admin/dashboard', 'Dashboard\Admin\DashboardController@index');
 
-
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     Route::group(['prefix' => 'menus', 'as' => 'menu.', 'namespace' => 'Menu\Admin'], function () {
@@ -15,6 +14,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     Route::group(['prefix' => 'data-types', 'as' => 'data.type.', 'namespace' => 'DataType\Admin'], function () {
         Route::post('/', 'DataTypeController@index')->name('index');
+    });
+
+    Route::group(['prefix' => 'tables', 'as' => 'table.', 'namespace' => 'Table\Admin'], function () {
+        Route::post('/', 'TableController@index')->name('index');
     });
 
     Route::group(['prefix' => 'modules', 'as' => 'module', 'namespace' => 'Module\Admin'], function () {

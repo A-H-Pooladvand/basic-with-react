@@ -27329,10 +27329,10 @@ var Module = function (_Component) {
     _createClass(Module, [{
         key: 'componentWillMount',
         value: function componentWillMount() {
-            this.getDataTypes();
+            this.getData();
         }
     }, {
-        key: 'getDataTypes',
+        key: 'getData',
         value: function getDataTypes() {
             var _this2 = this;
 

@@ -17,5 +17,10 @@
   },
   "dataTypes": {
     "path": "/admin/data-types"
+  },
+  "tables": {
+    "index": {
+      "path": "/admin/tables"
+    }
   }
 }

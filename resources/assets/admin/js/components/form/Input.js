@@ -24,6 +24,7 @@ export default class Input extends Component {
                 {this.isLabel()}
 
                 <input
+                    dir={this.props.dir}
                     name={this.props.name}
                     type={this.props.name}
                     className="form-control"
