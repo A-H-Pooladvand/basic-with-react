@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers\Module\Admin;
 
-use App\Http\Library\Helpers\ModuleHelper;
-use File;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Library\Database\DatabaseTemplate;
+
 
 class ModuleController extends Controller
 {
-    protected $helper;
+    protected $classNames = [];
 
-    public function __construct(ModuleHelper $moduleHelper)
+    public function __construct()
     {
-        $this->helper = $moduleHelper;
+        $this->classNames = $this->setClassNames();
     }
 
     public function index()
@@ -22,14 +20,13 @@ class ModuleController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store()
     {
-        return 'yes indeed';
-        $databaseContent = (new DatabaseTemplate($request))->get();
+        foreach ($this->classNames as $className) {
+            $class = new $className;
 
-        $path = database_path('/migrations/' . $this->helper->migrationTimeFormat() . 'create_' . $this->helper->snakePlural($request['title']) . '_table.php');
-
-        File::put($path, $databaseContent);
+            $class->handle();
+        }
     }
 
     public function show($id)
@@ -45,5 +42,13 @@ class ModuleController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function setClassNames()
+    {
+        return [
+            \App\Http\Library\Generator\Database::class,
+            \App\Http\Library\Generator\Controller::class
+        ];
     }
 }

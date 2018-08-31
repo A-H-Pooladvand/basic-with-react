@@ -13,6 +13,7 @@ export default class FormSelect extends Component {
                 isSearchable={this.props.isSearchable || true}
                 name={this.props.name}
                 isDisabled={this.props.isDisabled || false}
+                isMulti={this.props.isMulti || false}
             />
         );
     }

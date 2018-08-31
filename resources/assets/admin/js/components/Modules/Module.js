@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import Input from "../form/Input";
 import DataType from "./DataType";
 import DatabaseTables from "./DatabaseTables";
-import TableFields from "./TableFields";
 import AdminForm from "../form/AdminForm";
+import FormSelect from "../Select";
+import OptionalOptions from '../../data/module/OptionalOptions.json';
 
 class Module extends Component {
 
@@ -25,8 +26,6 @@ class Module extends Component {
         this.setState({
             rows: [...this.state.rows, this.state.rows.length],
             tableNames: [...this.state.tableNames, '']
-        }, () => {
-            console.log(this.state.tableNames);
         });
     }
 
@@ -44,7 +43,7 @@ class Module extends Component {
                     <div className="row">
 
                         <div className="col-sm-3">
-                            <Input dir='ltr' label={true} title='عنوان ماژول'/>
+                            <Input dir='ltr' name='title' label={true} title='عنوان ماژول'/>
                         </div>
 
                         <div className="w-100"/>
@@ -52,7 +51,7 @@ class Module extends Component {
                         <div className="col-sm-2">
                             {
                                 this.state.rows.map(row => {
-                                    return <Input key={row} dir='ltr' title={row === 0 ? 'عنوان فیلد' : ''}/>
+                                    return <Input name='fields[]' key={row} dir='ltr' title={row === 0 ? 'عنوان ستون' : ''}/>
                                 })
                             }
                         </div>
@@ -60,16 +59,16 @@ class Module extends Component {
                         <div className="col-sm-2">
                             {
                                 this.state.rows.map(row => {
-                                    return <Input key={row} dir='ltr' title={row === 0 ? 'مشخصات' : ''}/>
+                                    return <Input key={row} name='fields_options[]' dir='ltr' title={row === 0 ? 'مشخصات' : ''}/>
                                 })
                             }
                         </div>
 
                         <div className="col-sm-2">
-                            <label htmlFor="data_types">نوع</label>
+                            <label htmlFor="data_types">نوع داده</label>
                             {
                                 this.state.rows.map(row => {
-                                    return <DataType key={row}/>
+                                    return <DataType name='data_types[]' key={row}/>
                                 })
                             }
                         </div>
@@ -78,7 +77,7 @@ class Module extends Component {
                             <label htmlFor="data_types">کلید خارجی</label>
                             {
                                 this.state.rows.map((row, index) => {
-                                    return <DatabaseTables key={row} onChange={(e) => {
+                                    return <DatabaseTables name='tables[]' key={row} onChange={(e) => {
                                         this.handleChange(e, index)
                                     }
                                     }/>
@@ -86,17 +85,39 @@ class Module extends Component {
                             }
                         </div>
 
-                        <div className="col-sm-2">
-                            <label htmlFor="data_types">فیلد</label>
+                        {/*<div className="col-sm-2">
+                            <label htmlFor="data_types">کلید خارجی (انتخاب ستون)</label>
                             {
                                 this.state.rows.map((row, index) => {
-                                    return <TableFields key={row} tableName={this.state.tableNames[index]}/>
+                                    return <TableFields name='tables_fields[]' key={row} tableName={this.state.tableNames[index]}/>
+                                })
+                            }
+                        </div>*/}
+
+                        <div className="col-sm-2">
+                            <label htmlFor="input_optional">موارد اختیاری</label>
+                            {
+                                this.state.rows.map((row) => {
+                                    return (
+                                        <div className='form-group' key={row}>
+                                            <FormSelect key={row} className='dir-left text-left' isMulti={true} name='optional_options' options={OptionalOptions.options}/>
+                                        </div>
+                                    );
+                                })
+                            }
+
+                        </div>
+
+                        <div className="col-sm-1">
+                            {
+                                this.state.rows.map(row => {
+                                    return <Input name='default_values[]' key={row} dir='ltr' title={row === 0 ? 'پیش فرض' : ''}/>
                                 })
                             }
                         </div>
 
                         <div className="col-sm-1">
-                            <label htmlFor="data_types" className='invisible'>عملیات</label>
+                            <label htmlFor="button" className='invisible'>عملیات</label>
                             {
                                 this.state.rows.map((row, index) => {
                                     return row === 0 ?

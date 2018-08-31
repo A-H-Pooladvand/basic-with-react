@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Create' . $this->helper->snakePlural($this->request['title']) . 'Table extends Migration
+class Create' . ucwords($this->request['title']) . 'Table extends Migration
 {
     /**
      * Run the migrations.
@@ -38,10 +38,12 @@ class Create' . $this->helper->snakePlural($this->request['title']) . 'Table ext
      */
     public function up()
     {
-        Schema::create(\'' . $this->helper->snakePlural($this->request['title']) . '\', function (Blueprint $tableNames) {
-            $tableNames->increments(\'id\');
-            ' . $this->getDatabaseFields() . '
-            $tableNames->timestamps();
+        Schema::create(\'' . $this->helper->snakePlural($this->request['title']) . '\', function (Blueprint $table) {
+            $table->increments(\'id\');
+            ' . $this->setDatabaseColumns() . '
+            $table->timestamps();
+            
+            ' . $this->setDatabaseForeignKeys() . '
         });
     }
 
@@ -62,20 +64,40 @@ class Create' . $this->helper->snakePlural($this->request['title']) . 'Table ext
      *
      * @return string
      */
-    private function getDatabaseFields()
+    private function setDatabaseColumns()
     {
-        $fields = '';
+        $columns = '';
 
+        $fieldOptions = $this->request['fields_options'];
+
+        // $table->string('title', 100);
         foreach ($this->request['fields'] as $index => $field) {
-            $fields .=
-                '$tableNames->' .
-                $this->request['data_types'][$index] .
-                '(\'' . $field . '\', ' . $this->request['fields_options'][$index] . ');' .
-                $this->skipEndNewLine($index) .
-                "\t\t\t";
+            $columns .=
+                '$table->' . $this->request['data_types'][$index] . '(\'' . $field . '\'' . (isset($fieldOptions[$index]) ? ', ' . $fieldOptions[$index] : null) . ');' . $this->skipEndNewLine($index, $this->request['fields']) . "\t\t\t";
         }
 
-        return $fields;
+        return $columns;
+    }
+
+    /**
+     * Setup foreign keys.
+     *
+     * @return string
+     */
+    private function setDatabaseForeignKeys()
+    {
+        $foreignKeys = '';
+
+        foreach ($this->request['tables'] as $index => $table) {
+
+            if ( ! $table) {
+                continue;
+            }
+
+            $foreignKeys .= '$table->foreign(\'' . $this->request['fields'][$index] . '\')->references(\'id\')->on(\'' . $table . '\')->onUpdate(\'cascade\')->onDelete(\'cascade\');' . $this->skipEndNewLine($index, array_filter($this->request['tables'])) . "\t\t\t";
+        }
+
+        return $foreignKeys;
     }
 
     /**
@@ -83,11 +105,11 @@ class Create' . $this->helper->snakePlural($this->request['title']) . 'Table ext
      * loop $index + 1 is equal to count of fields.
      *
      * @param int $index
-     * @param int $length
+     * @param array $countableArray
      * @return string
      */
-    private function skipEndNewLine(int $index)
+    private function skipEndNewLine(int $index, array $countableArray)
     {
-        return $index + 1 === count($this->request['fields']) ? "" : "\n";
+        return $index + 1 >= count($countableArray) ? "" : "\n";
     }
 }

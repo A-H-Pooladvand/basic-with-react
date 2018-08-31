@@ -28,7 +28,7 @@ export default class DatabaseTables extends Component {
     render() {
         return (
             <div className='form-group'>
-                <Select handleChange={this.props.onChange} className='text-left dir-left' options={this.state.data}/>
+                <Select name={this.props.name} handleChange={this.props.onChange} className='text-left dir-left' options={this.state.data}/>
             </div>
         );
     }

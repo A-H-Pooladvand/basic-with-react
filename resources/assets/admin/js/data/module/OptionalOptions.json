@@ -1,0 +1,24 @@
+{
+  "options": [
+    {
+      "label": "Validation",
+      "value": "validation"
+    },
+    {
+      "label": "Has Front",
+      "value": "has_front"
+    },
+    {
+      "label": "Nullable",
+      "value": "nullable"
+    },
+    {
+      "label": "Index",
+      "value": "index"
+    },
+    {
+      "label": "Unique",
+      "value": "unique"
+    }
+  ]
+}
