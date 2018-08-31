@@ -70,7 +70,7 @@ class MenuTableSeeder extends Seeder
             ],
             [
                 'title' => 'کاربران',
-                'icon' => 'fas fa-user',
+                'icon' => 'far fa-user',
                 'permission' => 'user',
                 'sub' => [
                     [

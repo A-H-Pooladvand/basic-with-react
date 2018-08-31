@@ -1,6 +1,8 @@
 @import "~bootstrap/scss/functions";
 @import "variables";
+@import "functions";
 @import "~bootstrap/scss/bootstrap";
+@import "bootstrap-fix/init";
 @import "~vazir-font/dist/font-face.css";
 
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
@@ -15,3 +17,4 @@ $fa-font-path: "./webfonts";
 @import "components/panel";
 @import "components/sidebar";
 @import "components/navbar";
+@import "components/form/toolbar";

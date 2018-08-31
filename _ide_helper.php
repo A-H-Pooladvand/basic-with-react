@@ -3563,7 +3563,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Begin a fluent query against a database table.
+         * Begin a fluent query against a database tableNames.
          *
          * @param string $table
          * @return \Illuminate\Database\Query\Builder 
@@ -4169,7 +4169,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Get the table prefix for the connection.
+         * Get the tableNames prefix for the connection.
          *
          * @return string 
          * @static 
@@ -4181,7 +4181,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Set the table prefix in use by the connection.
+         * Set the tableNames prefix in use by the connection.
          *
          * @param string $prefix
          * @return void 
@@ -4194,7 +4194,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Set the table prefix and return the grammar.
+         * Set the tableNames prefix and return the grammar.
          *
          * @param \Illuminate\Database\Grammar $grammar
          * @return \Illuminate\Database\Grammar 
@@ -9820,7 +9820,7 @@ namespace Illuminate\Support\Facades {
     class Schema {
         
         /**
-         * Determine if the given table exists.
+         * Determine if the given tableNames exists.
          *
          * @param string $table
          * @return bool 
@@ -9832,7 +9832,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Get the column listing for a given table.
+         * Get the column listing for a given tableNames.
          *
          * @param string $table
          * @return array 
@@ -9879,7 +9879,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Determine if the given table has a given column.
+         * Determine if the given tableNames has a given column.
          *
          * @param string $table
          * @param string $column
@@ -9893,7 +9893,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Determine if the given table has given columns.
+         * Determine if the given tableNames has given columns.
          *
          * @param string $table
          * @param array $columns
@@ -9921,7 +9921,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Modify a table on the schema.
+         * Modify a tableNames on the schema.
          *
          * @param string $table
          * @param \Closure $callback
@@ -9935,7 +9935,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Create a new table on the schema.
+         * Create a new tableNames on the schema.
          *
          * @param string $table
          * @param \Closure $callback
@@ -9949,7 +9949,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Drop a table from the schema.
+         * Drop a tableNames from the schema.
          *
          * @param string $table
          * @return void 
@@ -9962,7 +9962,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Drop a table from the schema if it exists.
+         * Drop a tableNames from the schema if it exists.
          *
          * @param string $table
          * @return void 
@@ -9975,7 +9975,7 @@ namespace Illuminate\Support\Facades {
         }
         
         /**
-         * Rename a table on the schema.
+         * Rename a tableNames on the schema.
          *
          * @param string $from
          * @param string $to
@@ -13390,7 +13390,7 @@ namespace  {
             }
          
             /**
-             * Set the table which the query is targeting.
+             * Set the tableNames which the query is targeting.
              *
              * @param string $table
              * @return $this 
@@ -14393,7 +14393,7 @@ namespace  {
             }
          
             /**
-             * Lock the selected rows in the table.
+             * Lock the selected rows in the tableNames.
              *
              * @param string|bool $value
              * @return $this 
@@ -14405,7 +14405,7 @@ namespace  {
             }
          
             /**
-             * Lock the selected rows in the table for updating.
+             * Lock the selected rows in the tableNames for updating.
              *
              * @return \Illuminate\Database\Query\Builder 
              * @static 
@@ -14416,7 +14416,7 @@ namespace  {
             }
          
             /**
-             * Share lock the selected rows in the table.
+             * Share lock the selected rows in the tableNames.
              *
              * @return \Illuminate\Database\Query\Builder 
              * @static 
@@ -14621,7 +14621,7 @@ namespace  {
             }
          
             /**
-             * Run a truncate statement on the table.
+             * Run a truncate statement on the tableNames.
              *
              * @return void 
              * @static 
@@ -14870,7 +14870,7 @@ namespace Illuminate\Support {
      * @method Fluent default(mixed $value) Add the default modifier
      * @method Fluent first() Select first row
      * @method Fluent index(string $name = null) Add the in dex clause
-     * @method Fluent on(string $table) `on` of a foreign key
+     * @method Fluent on(string $tableNames) `on` of a foreign key
      * @method Fluent onDelete(string $action) `on delete` of a foreign key
      * @method Fluent onUpdate(string $action) `on update` of a foreign key
      * @method Fluent primary() Add the primary key modifier

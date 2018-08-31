@@ -18,7 +18,7 @@ class CreateMenusTable extends Migration
         Schema::create(self::TABLE_NAME, function (Blueprint $table) {
             $table->smallIncrements('id');
             $table->unsignedSmallInteger('parent_id')->nullable();
-            $table->string('title')->index();
+            $table->string('title', 191)->index();
             $table->string('path', 300)->default('#');
             $table->string('icon', 50)->nullable();
             $table->string('permission', 50);

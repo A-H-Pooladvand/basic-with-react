@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import axios from "axios";
 import routes from "../../routes.json";
-import Select from "../Select";
+import Select from '../../components/Select';
 import '../../helpers/Helper';
 
-export default class DataType extends Component {
+export default class DatabaseTables extends Component {
 
     constructor(props) {
         super(props);
@@ -18,15 +18,17 @@ export default class DataType extends Component {
     }
 
     getData() {
-        axios.post(routes.dataTypes.path).then(response => {
-            this.setState({data: response.data.toSelectFormat('value', 'title')});
+        axios.post(routes.tables.index.path).then(response => {
+            this.setState({
+                data: response.data.toSelectFormat()
+            });
         });
     }
 
     render() {
         return (
             <div className='form-group'>
-                <Select className='text-left dir-left' name='data_types[]' handleChange={this.props.handleChange} options={this.state.data}/>
+                <Select handleChange={this.props.onChange} className='text-left dir-left' options={this.state.data}/>
             </div>
         );
     }

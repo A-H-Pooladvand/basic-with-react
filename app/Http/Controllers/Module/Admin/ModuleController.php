@@ -24,6 +24,7 @@ class ModuleController extends Controller
 
     public function store(Request $request)
     {
+        return 'yes indeed';
         $databaseContent = (new DatabaseTemplate($request))->get();
 
         $path = database_path('/migrations/' . $this->helper->migrationTimeFormat() . 'create_' . $this->helper->snakePlural($request['title']) . '_table.php');

@@ -21,6 +21,9 @@
   "tables": {
     "index": {
       "path": "/admin/tables"
+    },
+    "fields": {
+      "path": "/admin/tables/fields"
     }
   }
 }

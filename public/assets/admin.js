@@ -11872,7 +11872,7 @@ var validateDOMNesting = emptyFunction;
       // https://html.spec.whatwg.org/multipage/syntax.html#parsing-main-intd
       // https://html.spec.whatwg.org/multipage/syntax.html#parsing-main-incaption
       // No special behavior since these rules fall back to "in body" mode for
-      // all except special table nodes which cause bad parsing behavior anyway.
+      // all except special tableNames nodes which cause bad parsing behavior anyway.
 
       // https://html.spec.whatwg.org/multipage/syntax.html#parsing-main-intr
       case 'tr':

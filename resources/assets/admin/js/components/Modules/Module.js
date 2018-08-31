@@ -1,151 +1,129 @@
 import React, {Component} from 'react';
-import axios from 'axios';
 import Input from "../form/Input";
-import routes from '../../routes.json';
-import Select from 'react-select';
-import {formPost} from '../../helpers/ajax';
 import DataType from "./DataType";
-import Tables from "./Tables";
+import DatabaseTables from "./DatabaseTables";
+import TableFields from "./TableFields";
+import AdminForm from "../form/AdminForm";
 
-export default class Module extends Component {
+class Module extends Component {
 
     constructor(props) {
         super(props);
-        this.selectCounter = 0;
         this.state = {
-            dataTypes: [],
-            selectIndexKey: 0,
-            selects: [{id: 0}],
-            tables: [],
-            tableFields: []
+            tableNames: [''],
+            rows: [0]
         };
-
-        this.addSelect = this.addSelect.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
     }
 
-    addSelect() {
-        this.setState({selects: this.state.selects.concat({id: ++this.selectCounter, value: ''})});
+    handleChange(event, index) {
+        let tableNames = this.state.tableNames;
+        tableNames[index] = event.value;
+        this.setState({tableNames: tableNames});
     }
 
-    handleSubmit(e) {
-        formPost(routes.module.store.path, e);
+    handleClick() {
+        this.setState({
+            rows: [...this.state.rows, this.state.rows.length],
+            tableNames: [...this.state.tableNames, '']
+        }, () => {
+            console.log(this.state.tableNames);
+        });
     }
 
-    handleChange(value, index, key) {
-        const selects = this.state.selects;
-
-        selects[index][key] = value;
-
-        this.setState({selects});
+    handleDelete(index) {
+        let rows = this.state.rows;
+        rows.splice(index, 1);
+        this.setState({rows: rows});
     }
 
     render() {
-
         return (
             <div>
-                <form action="#" method='POST' onSubmit={this.handleSubmit}>
-
-                    <div className='row'>
-                        <div className="col-sm-6 col-md-4">
-                            <Input title='عنوان ماژول' name='title'/>
-                        </div>
-                    </div>
+                <AdminForm>
 
                     <div className="row">
 
-                        <div className="col-md-2">
+                        <div className="col-sm-3">
+                            <Input dir='ltr' label={true} title='عنوان ماژول'/>
+                        </div>
+
+                        <div className="w-100"/>
+
+                        <div className="col-sm-2">
                             {
-                                this.state.selects.map((select, index) => {
-                                    return <Input dir='ltr' key={select.id} title={index === 0 ? 'عنوان فیلد' : ''} name='fields[]' label={index === 0} placeholder='Field Title'/>
+                                this.state.rows.map(row => {
+                                    return <Input key={row} dir='ltr' title={row === 0 ? 'عنوان فیلد' : ''}/>
                                 })
                             }
                         </div>
 
-                        <div className="col-lg-2">
-
-                            <label htmlFor="input_data_types">انتخاب فیلد های دیتابیس</label>
+                        <div className="col-sm-2">
                             {
-                                this.state.selects.map((select, index) => {
-                                    return (
-                                        <div className='form-group' key={select.id}>
-                                            <DataType index={index} select={select}/>
-                                        </div>
-                                    );
-                                })
-                            }
-
-                        </div>
-
-                        <div className="col-md-2">
-                            {
-                                this.state.selects.map((select, index) => {
-                                    return <Input dir='ltr' key={select.id} title={index === 0 ? 'موارد اضافی' : ''} name='fields_options[]' label={index === 0} placeholder='Extra options'/>
+                                this.state.rows.map(row => {
+                                    return <Input key={row} dir='ltr' title={row === 0 ? 'مشخصات' : ''}/>
                                 })
                             }
                         </div>
 
-                        <div className="col-lg-2">
-
-                            <label htmlFor="input_tables">کلید خارجی</label>
-                            {this.state.selects.map((select, index) => {
-                                return (
-                                    <div className='form-group' key={select.id}>
-                                        <Tables index={index} select={select}/>
-                                    </div>
-                                );
-                            })}
-
+                        <div className="col-sm-2">
+                            <label htmlFor="data_types">نوع</label>
+                            {
+                                this.state.rows.map(row => {
+                                    return <DataType key={row}/>
+                                })
+                            }
                         </div>
 
-                        <div className="col-lg-2">
-
-                            <label htmlFor="input_foreign_fields[]">فیلد</label>
-                            {this.state.selects.map((select, index) => {
-                                return (
-                                    <div className='form-group' key={select.id}>
-                                        <Select name='foreign_fields[]'
-                                                value={select['foreign_fields']}
-                                                onChange={(selected) => this.handleChange(selected, index, 'foreign_fields')}
-                                                options={this.state.tables} placeholder='انتخاب نمایید' isSearchable={true}
-                                        />
-                                    </div>
-                                );
-                            })}
-
+                        <div className="col-sm-2">
+                            <label htmlFor="data_types">کلید خارجی</label>
+                            {
+                                this.state.rows.map((row, index) => {
+                                    return <DatabaseTables key={row} onChange={(e) => {
+                                        this.handleChange(e, index)
+                                    }
+                                    }/>
+                                })
+                            }
                         </div>
 
-                        <div className="col-lg-1">
-                            <label htmlFor="input_data_types" className='invisible'>Invisible</label>
+                        <div className="col-sm-2">
+                            <label htmlFor="data_types">فیلد</label>
+                            {
+                                this.state.rows.map((row, index) => {
+                                    return <TableFields key={row} tableName={this.state.tableNames[index]}/>
+                                })
+                            }
+                        </div>
 
-                            <div className="form-group">
-                                <button className="btn btn-primary btn-block" type='button' onClick={this.addSelect}>بیشتر</button>
-                            </div>
-
-                            {this.state.selects.map((select, index) => {
-
-                                if (index === 0) return null;
-
-                                return (
-                                    <div className='form-group' key={select.id}>
-                                        <button className="btn btn-primary btn-block" onClick={() => {
-                                            this.setState({
-                                                selects: this.state.selects.filter((item, key) => key !== index)
-                                            });
-                                        }}>
-                                            <i className='fa fa-trash-alt'/>
-                                        </button>
-                                    </div>
-                                );
-                            })}
+                        <div className="col-sm-1">
+                            <label htmlFor="data_types" className='invisible'>عملیات</label>
+                            {
+                                this.state.rows.map((row, index) => {
+                                    return row === 0 ?
+                                        (
+                                            <div className='form-group' key={row}>
+                                                <button onClick={this.handleClick.bind(this)} type='button' className='btn btn-primary btn-block'>بیشتر</button>
+                                            </div>
+                                        ) :
+                                        (
+                                            <div className='form-group' key={row}>
+                                                <button onClick={() => {
+                                                    this.handleDelete(index)
+                                                }} type='button' className='btn btn-danger btn-block'>
+                                                    <i className="fas fa-trash-alt"/>
+                                                </button>
+                                            </div>
+                                        )
+                                })
+                            }
                         </div>
 
                     </div>
 
-                    <button className="btn btn-primary">ارسال</button>
-                </form>
+                </AdminForm>
             </div>
         );
-    }
+    };
 }
+
+export default Module;

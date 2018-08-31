@@ -38,10 +38,10 @@ class Create' . $this->helper->snakePlural($this->request['title']) . 'Table ext
      */
     public function up()
     {
-        Schema::create(\'' . $this->helper->snakePlural($this->request['title']) . '\', function (Blueprint $table) {
-            $table->increments(\'id\');
+        Schema::create(\'' . $this->helper->snakePlural($this->request['title']) . '\', function (Blueprint $tableNames) {
+            $tableNames->increments(\'id\');
             ' . $this->getDatabaseFields() . '
-            $table->timestamps();
+            $tableNames->timestamps();
         });
     }
 
@@ -68,7 +68,7 @@ class Create' . $this->helper->snakePlural($this->request['title']) . 'Table ext
 
         foreach ($this->request['fields'] as $index => $field) {
             $fields .=
-                '$table->' .
+                '$tableNames->' .
                 $this->request['data_types'][$index] .
                 '(\'' . $field . '\', ' . $this->request['fields_options'][$index] . ');' .
                 $this->skipEndNewLine($index) .
