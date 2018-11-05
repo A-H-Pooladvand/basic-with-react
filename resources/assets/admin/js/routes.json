@@ -12,6 +12,15 @@
       "path": "/admin/modules"
     }
   },
+  "user": {
+    "create": {
+      "path": "/users/create",
+      "component": "User"
+    },
+    "store": {
+      "path": "/admin/users"
+    }
+  },
   "admin": {
     "path": "/admin/menus"
   },

@@ -5,6 +5,7 @@ import DatabaseTables from "./DatabaseTables";
 import AdminForm from "../form/AdminForm";
 import FormSelect from "../Select";
 import OptionalOptions from '../../data/module/OptionalOptions.json';
+import routes from '../../routes.json';
 
 class Module extends Component {
 
@@ -38,7 +39,7 @@ class Module extends Component {
     render() {
         return (
             <div>
-                <AdminForm>
+                <AdminForm path={routes.module.create.path}>
 
                     <div className="row">
 

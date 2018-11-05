@@ -80,7 +80,7 @@ class MenuTableSeeder extends Seeder
                     ],
                     [
                         'title' => 'لیست کاربران',
-                        'path' => $prefix . 'users/index',
+                        'path' => $prefix . 'users',
                         'permission' => 'user-index',
                     ],
                     [
@@ -90,7 +90,7 @@ class MenuTableSeeder extends Seeder
                     ],
                     [
                         'title' => 'لیست نقش ها',
-                        'path' => $prefix . 'roles/index',
+                        'path' => $prefix . 'roles',
                         'permission' => 'role-index',
                     ],
                 ]
@@ -107,7 +107,7 @@ class MenuTableSeeder extends Seeder
                     ],
                     [
                         'title' => 'لیست کاربران',
-                        'path' => $prefix . 'modules/index',
+                        'path' => $prefix . 'modules',
                         'permission' => 'module-index'
                     ]
                 ]

@@ -25,7 +25,7 @@ class ModuleController extends Controller
         foreach ($this->classNames as $className) {
             $class = new $className;
 
-            $class->handle();
+            return $class->handle();
         }
     }
 
@@ -47,7 +47,7 @@ class ModuleController extends Controller
     private function setClassNames()
     {
         return [
-            \App\Http\Library\Generator\Database::class,
+//            \App\Http\Library\Generator\Database::class,
             \App\Http\Library\Generator\Controller::class
         ];
     }

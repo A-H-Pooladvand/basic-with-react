@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import {formPost} from "../../helpers/ajax";
-import routes from '../../routes.json';
 import Toolbar from "./Toolbar";
 
 class AdminForm extends Component {
 
     postForm(event) {
-        formPost(routes.module.store.path, event);
+        formPost(this.props.path, event);
     }
 
     render() {
